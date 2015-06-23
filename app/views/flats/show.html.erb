@@ -1,0 +1,16 @@
+<h1 class="text-center"><%= @flat.title %></h1>
+<div class="flat-details"><p class="description">Description: <% @flat.description %></p>
+<p class="price">Price: <%= @flat.price %></p>
+<p class="address"><%= @flat.zipcode %></p>
+<p class="address"><%= @flat.city %></p>
+</div>
+
+<div class="form">
+  <%= simple_form_for [@flat, @booking], url: flat_bookings_path(@flat), method: :post do |f| %>
+    <%= f.input :check_in %>
+    <%= f.input :check_out %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
+
+
