@@ -1,0 +1,12 @@
+<h1>Properties</h1>
+<ul class="li-no-bullets">
+  <% @flats.each do |flat| %>
+  <p><%= flat.title %></p>
+  <img class="placeholder" src="http://placehold.it/150x150">
+  <p><%= flat.price %></p>
+  <li><%= link_to "View flat", flat_path(flat) %></li>
+
+  <% end %>
+</ul>
+
+

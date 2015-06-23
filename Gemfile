@@ -3,7 +3,7 @@ ruby '2.2.2'
 
 gem 'font-awesome-sass'
 gem 'devise'
-
+gem 'paperclip'
 gem 'rails_12factor', group: :production
 gem 'puma', group: :production
 
