@@ -10,7 +10,7 @@ class FlatsController < ApplicationController
   def show
     @flat = Flat.find(params[:id])
     @booking = Booking.new
-    @booking.flat
+    @booking.flat = @flat
   end
 
   def new

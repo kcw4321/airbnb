@@ -1,12 +1,16 @@
 <h1>Properties</h1>
 <ul class="li-no-bullets">
   <% @flats.each do |flat| %>
-  <p><%= flat.title %></p>
-  <img class="placeholder" src="http://placehold.it/150x150">
-  <p><%= flat.price %></p>
-  <li><%= link_to "View flat", flat_path(flat) %></li>
-
+    <p><%= flat.title %></p>
+    <img class="placeholder" src="http://placehold.it/150x150">
+    <p><%= flat.price %></p>
+    <li><%= link_to "View flat", flat_path(flat) %></li>
   <% end %>
 </ul>
 
-
+<% form_tag flat_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
