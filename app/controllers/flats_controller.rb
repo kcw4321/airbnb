@@ -1,11 +1,16 @@
 class FlatsController < ApplicationController
 
+  # def index
+  #   @flats = Flat.search(params[:search])
+  # end
   def index
     @flats = Flat.all
   end
 
   def show
     @flat = Flat.find(params[:id])
+    @booking = Booking.new
+    @booking.flat = @flat
   end
 
   def new
