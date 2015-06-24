@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   root to:'pages#home'
+  # post '/search' => 'flats#search'
+  # post '/results'=> 'flats#resultsrake'
 
   resources :flats, except: :destroy do
     resources :bookings, except: :destroy

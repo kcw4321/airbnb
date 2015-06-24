@@ -1,22 +1,15 @@
-<h1 class="text-center"><%= @flat.title %></h1>
+<h2>Booking details :</h2>
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-6 flat-details">
-      <img class="placeholder" src="http://placehold.it/350x200">
-      <p class="check_in">Check_in date: <%= @booking.check_in %></p>
-      <p class="check_out">Check_out date: <%= @booking.check_out %></p>
-      <p class="user_id"><%= @booking.user_id %></p>
-      <p class="flat_id"><%= @booking.flat_id%></p>
-      <p class="accepted"><%= @booking.accepted%></p>
-      <p class="text-center"><%= link_to 'Back to flats', flats_path %></p>
+    <div class="col-md-8">
+      <p>reservation for:</p><h2><%= @booking.flat.title %></h2>
+      <p>address of flat<%= @booking.flat.address %></p>
+      <p><%= @booking.check_in %></p>
+      <p><%= @booking.check_out %></p>
+      <p><%= number_to_currency(@booking.flat.price) %></p>
     </div>
-
-    <div class="col-xs-12 col-sm-6 form">
-      <%= simple_form_for [@flat, @booking], url: booking_flats_path(@booking), method: :post do |f| %>
-        <%= f.input :check_in %>
-        <%= f.input :check_out %>
-        <%= f.button :submit, "Send booking request" %>
-      <% end %>
+    <div class="col-md-4">
     </div>
   </div>
 </div>
+
