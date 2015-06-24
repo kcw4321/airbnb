@@ -1,10 +1,8 @@
 class FlatsController < ApplicationController
 
-  # def index
-  #   @flats = Flat.search(params[:search])
-  # end
+
   def index
-    @flats = Flat.all
+    @flats = Flat.where(city: params[:city])
   end
 
   def show
@@ -39,5 +37,15 @@ class FlatsController < ApplicationController
   def flat_params
     params.require(:flat).permit(:title, :description, :price, :street, :zipcode, :city)
   end
+
+ #  def search
+ #    city = params[:city]
+ #    flats = Flat.all.where(city: city)
+ #    redirect_to results_path
+ #  end
+
+ # def results
+ #    @flats = Flat.all.where(city: city)
+ # end
 
 end
