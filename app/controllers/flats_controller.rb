@@ -2,7 +2,10 @@ class FlatsController < ApplicationController
 
 
   def index
+    @flats = Flat.all
+    if params[:city]
     @flats = Flat.where(city: params[:city])
+    end
   end
 
   def show
