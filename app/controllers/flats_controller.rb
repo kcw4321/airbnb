@@ -40,4 +40,9 @@ class FlatsController < ApplicationController
     params.require(:flat).permit(:title, :description, :price, :street, :zipcode, :city)
   end
 
+  def search
+    # Implement research here en cherchant grace au nom du flat
+    # Utiliser le where du SQL
+  end
+
 end
