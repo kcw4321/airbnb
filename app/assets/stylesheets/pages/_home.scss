@@ -40,14 +40,14 @@
     width: 100%;
 }
 .home_colour_police{
-  color: white;
+  color: blue;
 }
-// .superpose_title{
-//   z-index: 2;
-//   position: absolute;
-//   text-align: center;
-//   margin: 0 300px;}
+.superpose_title{
+  z-index: 2;
+  position: absolute;
+  text-align: center;
+  margin: 0 300px;}
 
-//   .row_space{
-//   width:1140 px;
-//   height:114px}
+body {
+  background-image: url(wallpaper.png);
+}

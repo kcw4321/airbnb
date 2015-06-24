@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-6 flat-details">
-      <img class="placeholder" src="http://placehold.it/350x200">
+      <%= image_tag 'placeholder.jpg', width: '90%' %>
       <p class="description">Description: <%= @flat.description %></p>
       <p class="price">Price per night: <%= @flat.price %>€</p>
       <p class="address"><%= @flat.zipcode %></p>

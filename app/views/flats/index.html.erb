@@ -1,11 +1,25 @@
-<h1>Properties</h1>
-<ul class="li-no-bullets">
-  <% @flats.each do |flat| %>
-    <p><%= flat.title %></p>
-    <img class="placeholder" src="http://placehold.it/150x150">
-    <p><%= flat.price %></p>
-    <li><%= link_to "View flat", flat_path(flat) %></li>
-  <% end %>
-</ul>
+<h1 class="text-center">Flats</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <%= image_tag 'map-placeholder.png', width: '80%' %></div>
+
+
+  <div class="col-xs-6">
+    <div class="row">
+        <% @flats.each do |flat| %>
+      <div class="col-xs-6">
+        <p class="flat-details"><%= flat.title %></p>
+        <%= image_tag 'placeholder.jpg', width: '90%' %>
+        <p><%= flat.price %>€ per night</p>
+        <p><%= link_to "View flat", flat_path(flat), class: "btn btn-primary" %></p>
+      </div>
+    <% end %>
+
+    </div>
+  </div>
+  </div>
+</div>
+
 
 
