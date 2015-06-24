@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4">
+    </div>
+    <div class="col-xs-4">
+      <%= simple_form_for [@flat, @booking] do |form| %>
+        <%= form.input :check_in, as: :string, input_html: { class: "datepicker" }  %>
+        <%= form.input :check_out, as: :string, input_html: { class: "datepicker" } %>
+        <%= form.submit "Book now!", class: "btn btn-success" %>
+      <% end %>
+    <div class="col-xs-4">
+    </div>
+  </div>
+</div>

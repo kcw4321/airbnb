@@ -11,6 +11,7 @@ gem 'puma', group: :production
 gem 'bootstrap-sass'
 gem 'simple_form'
 
+gem 'bootstrap-datepicker-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
