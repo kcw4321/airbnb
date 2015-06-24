@@ -7,10 +7,11 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    @booking.flat = @flat
   end
 
   def create
-      @booking = Booking.new(flat_params)
+      @booking = Booking.new(booking_params)
     if @booking.save
       redirect_to booking_path(@booking)
     else
