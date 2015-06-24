@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :update]
 
   def index
-    @bookings = Booking.all
+   @bookings= Booking.all
   end
 
   def show
@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
       @booking.flat = @flat
       @booking.user = current_user
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to flat_booking_path(@booking)
     else
       render :new
     end
@@ -44,3 +44,5 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:check_in, :check_out)
   end
 end
+
+

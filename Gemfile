@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.2.2'
 
+gem 'figaro'
 gem 'font-awesome-sass'
 gem 'devise'
 gem 'paperclip'
