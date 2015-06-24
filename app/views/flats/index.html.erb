@@ -1,11 +1,18 @@
-<h1>Properties</h1>
-<ul class="li-no-bullets">
-  <% @flats.each do |flat| %>
-    <p><%= flat.title %></p>
+<h1 class="text-center">Flats</h1>
+<div class="container">
+  <div class="row">
+      <% @flats.each do |flat| %>
+    <div class="col-xs-2"><p><%= flat.title %></p>
     <img class="placeholder" src="http://placehold.it/150x150">
-    <p><%= flat.price %></p>
-    <li><%= link_to "View flat", flat_path(flat) %></li>
+    <p><%= flat.price %>€ per night</p>
+    <p><%= link_to "View flat", flat_path(flat) %></p>
+    </div>
   <% end %>
-</ul>
+
+
+  </div>
+</div>
+
+
 
 
