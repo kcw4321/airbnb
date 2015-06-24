@@ -9,8 +9,13 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @flat = Flat.find(params[:flat_id])
     @booking = Booking.new
+    if params[:flat_id]
+      @flat = Flat.find(params[:flat_id])
+    else
+      @flat = Flat.first
+    end
+    @booking.flat = @flat
   end
 
   def create

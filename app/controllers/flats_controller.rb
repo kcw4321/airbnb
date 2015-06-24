@@ -42,7 +42,7 @@ class FlatsController < ApplicationController
 
   def search
     # Implement research here en cherchant grace au nom du flat
-    # Utiliser le where du SQL
+    SELECT * FROM client WHERE ville = 'paris'
   end
 
 end

@@ -1,6 +1,6 @@
 <h1>Edit property</h1>
 <div class="form">
-  <%= simple_form_for [@flat, @booking], :url => flat_bookings_path,  html: {multipart: true} do |f| %>
+  <%= simple_form_for [@flat, @booking], :url => flat_bookings_path,  html: {multipart: true, class: 'foobarbaz'} do |f| %>
     <%= f.input :check_in %>
     <%= f.input :check_out%>
     <%= f.input :user_id %>
