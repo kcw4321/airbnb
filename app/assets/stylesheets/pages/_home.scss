@@ -2,6 +2,7 @@
     border-right: none;
     border-left: none;
     position: relative;
+    margin-top: -22px;
 }
 .no-video .video-container video,
 .touch .video-container video {
@@ -39,17 +40,22 @@
 .video-container video.fillWidth {
     width: 100%;
 }
-.home_colour_police{
-  color: blue;
-}
-.superpose_title{
-  z-index: 2;
-  position: absolute;
-  text-align: center;
-  margin: 0 300px;}
+// .home_colour_police{
+//   color: blue;
+// }
+// .superpose_title{
+//   z-index: 2;
+//   position: absolute;
+//   text-align: center;
+//   margin: 0 300px;}
 
-body {
-  background-image: url(wallpaper.png);
+// body {
+//   background-image: url(wallpaper.png);
+// }
+
+.search-container {
+  color: white;
+  margin-top: 4em;
 }
 
 .padding {
