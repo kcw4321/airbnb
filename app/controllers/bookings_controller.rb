@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:show]
 
   def index
-    @bookings = Booking.all
+   @bookings= Booking.all
   end
 
   def show
@@ -38,3 +38,5 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:check_in, :check_out)
   end
 end
+
+
