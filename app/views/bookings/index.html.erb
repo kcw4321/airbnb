@@ -6,13 +6,13 @@
   <div class="row">
     <div class="col-xs-6">
 
-    <% @bookings.each do%>
+    <% @bookings.each do %>
       <p>Date of arrival <%= @booking.check_in %></p>
       <p>Date of departure <%= @booking.check_out %></p>
       <p>address of <%= @flat.title %></p>
       <p><%= @flat.street %>, <%= ' ' %><%= @flat.city %></p>
       <p>Price <%= @flat.price %>€</p>
-      <%end%>
+      <% end %>
     </div>
   </div>
   </div>

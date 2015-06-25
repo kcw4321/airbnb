@@ -1,7 +1,7 @@
 
 <div class="container">
   <div class="row">
-    <i class="fa fa-arrow-left"><%= link_to ' booking request', flat_path(@flat) %></i>
+    <i class="fa fa-arrow-left"><%= link_to ' booking request', :back %></i>
     <h2 class='text-center'>Reservation for <%= @flat.title %></h2>
     <div class='col-xs-6 text-center'><%= image_tag 'placeholder.jpg', width: '90%' %>
     </div>
