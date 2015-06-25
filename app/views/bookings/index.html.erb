@@ -1,18 +1,19 @@
-
 <div class="container">
   <div class="row">
-    <h2 class='text-center'>Reservation for <%= @flat.title %></h2>
+    <h2 class='text-center'> List of bookings</h2>
     <div class='col-xs-6 text-center'><%= image_tag 'placeholder.jpg', width: '90%' %>
     </div>
   <div class="row">
     <div class="col-xs-6">
+
+    <% @bookings.each do%>
       <p>Date of arrival <%= @booking.check_in %></p>
       <p>Date of departure <%= @booking.check_out %></p>
       <p>address of <%= @flat.title %></p>
       <p><%= @flat.street %>, <%= ' ' %><%= @flat.city %></p>
       <p>Price <%= @flat.price %>€</p>
+      <%end%>
     </div>
   </div>
   </div>
 </div>
-
