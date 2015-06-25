@@ -2,18 +2,24 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-6 flat-details">
+      <% if @flat.picture? %>
+      <%= image_tag @flat.picture.url(:medium) %>
+      <% else %>
       <%= image_tag 'placeholder.jpg', width: '90%' %>
+      <% end %>
       <p class="description">Description: <%= @flat.description %></p>
       <p class="price">Price per night: <%= @flat.price %>€</p>
       <p class="address"><%= @flat.zipcode %></p>
       <p class="address"><%= @flat.city %></p>
       <p class="text-center"><%= link_to 'Back to flats', flats_path %></p>
+      <p class="text-center"><%= link_to 'Edit flat', edit_flat_path %></p>
     </div>
 
     <div class="col-xs-12 col-sm-6 form">
       <%= simple_form_for @booking, method: :post do |f| %>
-        <%= f.input :check_in %>
-        <%= f.input :check_out %>
+        <%= f.input :check_in, as: :bootstrap_datepicker %>
+        <%= f.input :check_out, as: :bootstrap_datepicker %>
+        <%= f.input :guest, label: 'Number of guests' %>
         <%= f.input :flat_id, :as => :hidden, :input_html => { :value => @flat.id } %>
 
         <%= f.button :submit, "Send booking request" %>
