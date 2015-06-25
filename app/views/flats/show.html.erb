@@ -11,9 +11,11 @@
     </div>
 
     <div class="col-xs-12 col-sm-6 form">
-      <%= simple_form_for [@flat, @booking], url: flat_bookings_path(@flat), method: :post do |f| %>
+      <%= simple_form_for @booking, method: :post do |f| %>
         <%= f.input :check_in %>
         <%= f.input :check_out %>
+        <%= f.input :flat_id, :as => :hidden, :input_html => { :value => @flat.id } %>
+
         <%= f.button :submit, "Send booking request" %>
       <% end %>
     </div>
