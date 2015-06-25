@@ -4,13 +4,15 @@ class FlatsController < ApplicationController
   def index
     @flats = Flat.all
 
-    if params#[:city]
-    @flats = Flat
-    .where(city: params[:city], capacity: params[:capacity])
-    .where("start_availability >= ? AND end_availability <= ?", params[:booking][:check_in], params[:booking][:check_out])
+    if params[:city].present? && params[:capacity].present?&&
+      params[:start_availability ].present?&& params[:end_availability ].present?
+      @flats = Flat
+      .where(city: params[:city], capacity: params[:capacity])
+      .where("start_availability >= ? AND end_availability <= ?", params[:booking][:check_in], params[:booking][:check_out])
 
-    #("LOWER(address_city) = :city AND capacity >= :guest")
-
+      #("LOWER(address_city) = :city AND capacity >= :guest")
+    else
+      @flats = Flat.all
     end
   end
 
