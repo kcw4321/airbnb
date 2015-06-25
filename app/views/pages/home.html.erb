@@ -4,19 +4,6 @@
  -->
 
 <div class="homepage-hero-module">
-<div class="container">
-  <div class="row">
-    <div class="col-sm-8 col-sm-offset-1">
-      <%= form_tag flats_path, method: 'get', class: 'foobarbaz' do %>
-        <div class="form-group">
-          <%= label_tag :city, "Your search:" %>
-          <%= text_field_tag :city, params[:city], class: "form-control" %>
-        </div>
-        <%= submit_tag "Search", :name => nil, class: "btn btn-success" %>
-      <% end %>
-      </div>
-    </div>
-  </div>
   <div class="video-container">
     <div class="filter superpose_title"></div>
     <video autoplay loop class="fillWidth">
@@ -25,6 +12,22 @@
     </video>
     <div class="poster hidden">
       <img src="<%= video_path("birds/birds.jpg") %>" alt="">
+    </div>
+
+    <div class="search-container">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-1">
+            <%= form_tag flats_path, method: 'get', class: 'foobarbaz' do %>
+              <div class="form-group">
+                <%= label_tag :city, "Your search:" %>
+                <%= text_field_tag :city, params[:city], class: "form-control" %>
+              </div>
+              <%= submit_tag "Search", :name => nil, class: "btn btn-success" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

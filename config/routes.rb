@@ -4,10 +4,9 @@ Rails.application.routes.draw do
   # post '/search' => 'flats#search'
   # post '/results'=> 'flats#resultsrake'
 
-  resources :flats, except: :destroy do
-    resources :bookings, except: :destroy
-  end
-  resources :bookings, only: :new
+  resources :flats, except: :destroy
+  resources :bookings, except: :destroy
+
 
     # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
