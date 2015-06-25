@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150622140331) do
+ActiveRecord::Schema.define(version: 20150625133212) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20150622140331) do
     t.integer  "flat_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "guest"
   end
 
   add_index "bookings", ["flat_id"], name: "index_bookings_on_flat_id", using: :btree
@@ -37,8 +38,11 @@ ActiveRecord::Schema.define(version: 20150622140331) do
     t.string   "zipcode"
     t.string   "city"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "capacity"
+    t.datetime "start_availability"
+    t.datetime "end_availability"
   end
 
   add_index "flats", ["user_id"], name: "index_flats_on_user_id", using: :btree
@@ -56,6 +60,12 @@ ActiveRecord::Schema.define(version: 20150622140331) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "picture"
+    t.string   "name"
+    t.string   "token"
+    t.datetime "token_expiry"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
