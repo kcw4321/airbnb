@@ -3,8 +3,14 @@ class FlatsController < ApplicationController
 
   def index
     @flats = Flat.all
-    if params[:city]
-    @flats = Flat.where(city: params[:city])
+
+    if params#[:city]
+    @flats = Flat
+    .where(city: params[:city], capacity: params[:capacity])
+    .where("start_availability >= ? AND end_availability <= ?", params[:booking][:check_in], params[:booking][:check_out])
+
+    #("LOWER(address_city) = :city AND capacity >= :guest")
+
     end
   end
 
@@ -38,17 +44,8 @@ class FlatsController < ApplicationController
   end
 
   def flat_params
-    params.require(:flat).permit(:title, :description, :price, :street, :zipcode, :city)
+    params.require(:flat).permit(:title, :description, :price, :street, :zipcode, :city) #:capacity
   end
 
- #  def search
- #    city = params[:city]
- #    flats = Flat.all.where(city: city)
- #    redirect_to results_path
- #  end
-
- # def results
- #    @flats = Flat.all.where(city: city)
- # end
 
 end
