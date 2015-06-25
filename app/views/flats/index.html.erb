@@ -9,8 +9,13 @@
           <% @flats.each do |flat| %>
         <div class="col-xs-6">
           <p class="flat-details"><%= flat.title %></p>
-          <%= image_tag 'placeholder.jpg', width: '90%' %>
+            <% if flat.picture? %>
+            <%= image_tag flat.picture.url(:thumb) %>
+            <% else %>
+            <%= image_tag 'placeholder.jpg', height: '100px' %>
+            <% end %>
           <p><%= flat.price %>€ per night</p>
+          <p>Capacity: <%= flat.capacity %></p>
           <p><%= link_to "View flat", flat_path(flat), class: "btn btn-primary" %></p>
         </div>
       <% end %>
