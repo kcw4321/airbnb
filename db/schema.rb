@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20150626015953) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "guest"
+    t.integer  "guests"
   end
 
   add_index "bookings", ["flat_id"], name: "index_bookings_on_flat_id", using: :btree
@@ -38,11 +39,15 @@ ActiveRecord::Schema.define(version: 20150626015953) do
     t.string   "zipcode"
     t.string   "city"
     t.integer  "user_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
     t.integer  "capacity"
     t.datetime "start_availability"
     t.datetime "end_availability"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
   add_index "flats", ["user_id"], name: "index_flats_on_user_id", using: :btree

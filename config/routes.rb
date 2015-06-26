@@ -10,9 +10,9 @@ Rails.application.routes.draw do
     end
   end
   resources :flats, except: :destroy do
-    resources :bookings, except: :destroy
+    resources :bookings, except: [:destroy, :index]
   end
-  resources :bookings, only: :destroy
+  resources :bookings, only: [:destroy, :index]
     # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

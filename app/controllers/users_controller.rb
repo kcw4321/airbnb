@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
 
   def profile
+    @my_bookings = current_user.bookings
+    @my_rents = current_user.bookings.where()
   end
 
   def edit
