@@ -1,21 +1,24 @@
+
 <div class="container">
- <div class="row">
-   <h2 class='text-center'> List of bookings</h2>
-   <div class='col-xs-6 text-center'><%= image_tag 'placeholder.jpg', width: '90%' %>
-   </div>
- <div class="row">
-   <div class="col-xs-6">
+<div class="row">
+  <h2 class='text-center'> List of bookings</h2>
+  <div class='col-xs-6 text-center'><%= image_tag 'placeholder.jpg', width: '90%' %>
+  </div>
+<div class="row">
+  <div class="col-xs-6">
 
-   <% @bookings.each do |booking| %>
+  <div class="card__body">
+    <div class="card__category"><a href="#">Photos</a></div>
+     <% @bookings.each do |booking| %>
 
-     <p>Date of arrival <%= booking.check_in %></p>
-     <p>Date of departure <%= booking.check_out %></p>
-     <p>address of <%= booking.flat.title %></p>
-     <p><%= booking.flat.street %>, <%= ' ' %><%= booking.flat.city %></p>
-     <p>Price <%= booking.flat.price %>€</p>
-   <%end%>
-   </div>
- </div>
- </div>
-</div>
+      <div class="card__date">
+        <span class="card__date__arrival"><p>Date of arrival <%= booking.check_in %></p> </span>
+        <span class="card__date__departure"><p>Date of departure <%= booking.check_out %></p></span>
+      </div>
 
+    <div class="card__title">address of <%= booking.flat.title %></div>
+    <div class="card__subtitle"><%= booking.flat.street %>, <%= ' ' %><%= booking.flat.city %></p></div>
+    <div class="card__description">Price <%= booking.flat.price %>
+    </div>
+     <%end%>
+  </div>
