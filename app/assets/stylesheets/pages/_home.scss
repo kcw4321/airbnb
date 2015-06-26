@@ -50,7 +50,7 @@
 //   margin: 0 300px;}
 
 body {
-  background-image: url(wallpaper.png);
+   background-image: url(wallpaper.png);
  }
 
 .search-container {
@@ -59,9 +59,13 @@ body {
   position: absolute;
   width: 100%;
   margin-top: 300px;
-  padding-left: 350px;
+  padding-left: 150px;
 }
 
 .padding {
   padding-bottom: 20px;
+}
+.style_home_title {
+  color: white;
+
 }

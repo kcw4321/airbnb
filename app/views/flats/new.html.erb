@@ -1,12 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <h1>Edit property</h1>
+      <h1>Add a new flat</h1>
       <div class="form">
         <%= simple_form_for @flat, html: {multipart: true} do |f| %>
           <%= f.input :title %>
           <%= f.input :description %>
           <%= f.input :price %>
+          <%= f.input :capacity %>
           <%= f.input :street %>
           <%= f.input :zipcode %>
           <%= f.input :city %>
@@ -14,7 +15,8 @@
           <%= f.file_field :picture %>
           <%= f.button :submit %>
         <% end %>
-        <%= link_to 'Cancel', flats_path %>
+        <i class="fa fa-trash-o"></i><%= link_to 'Cancel', flats_path %>
+        <i class="fa fa-chevron-circle-left"></i><%= link_to "Back", :back %>
       </div>
     </div>
   </div>

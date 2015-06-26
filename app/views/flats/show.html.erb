@@ -12,18 +12,29 @@
       <p class="address"><%= @flat.zipcode %></p>
       <p class="address"><%= @flat.city %></p>
       <p class="text-center"><%= link_to 'Back to flats', flats_path %></p>
+      <% if user_signed_in? && current_user.id == @flat.user.id %>
       <p class="text-center"><%= link_to 'Edit flat', edit_flat_path %></p>
+      <% end %>
     </div>
 
-    <div class="col-xs-12 col-sm-6 form">
-      <%= simple_form_for [@flat, @booking], method: :post do |f| %>
-        <%= f.input :check_in %>
-        <%= f.input :check_out %>
-        <%= f.input :guest, label: 'Number of guests' %>
-        <%= f.input :flat_id, :as => :hidden, :input_html => { :value => @flat.id } %>
+    <% if user_signed_in? %>
+      <div class="col-xs-12 col-sm-6 form">
+        <%= simple_form_for @booking, method: :post do |f| %>
+          <%= f.input :check_in %> <!-- , as: :bootstrap_datepicker -->
+          <%= f.input :check_out %> <!-- , as: :bootstrap_datepicker -->
+          <%= f.input :guest, label: 'Number of guests' %>
+          <%= f.input :flat_id, :as => :hidden, :input_html => { :value => @flat.id } %>
+          <%= f.button :submit, "Send booking request" %>
+        <% end %>
+      <% else %>
+        <div class="padding-spacing">
+        <p>Want to reserve this flat? Please sign in or create an account</p>
+          <%= link_to('Sign in', new_user_session_path, class: "btn btn-primary") %>
+          <%= link_to "Create an account", new_user_registration_path , class: "btn btn-success" %>
+        </div>
 
-        <%= f.button :submit, "Send booking request" %>
       <% end %>
+
     </div>
   </div>
 </div>

@@ -11,3 +11,10 @@
   background: image-url('placeholder.jpg');
   width: 150px;
 }
+
+.padding-spacing {
+  padding-top: 80px;
+  p {
+    padding-bottom: 30px;
+  }
+}

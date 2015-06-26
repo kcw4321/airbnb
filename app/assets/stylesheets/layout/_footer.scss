@@ -1,1 +1,13 @@
 // Your footer style
+#footer {
+  margin-top: 20px;
+  text-decoration: none;
+  background: $gray-darker;
+  li {
+    color: $gray-lighter;
+    padding: 10px 15px;
+    font-size: 20px;
+  }
+
+
+}
