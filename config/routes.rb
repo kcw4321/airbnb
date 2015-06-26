@@ -1,13 +1,18 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to:'pages#home'
   # post '/search' => 'flats#search'
   # post '/results'=> 'flats#resultsrake'
 
-  resources :flats, except: :destroy
-  resources :bookings, except: :destroy
-
-
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  resources :users, only: [:edit, :update] do
+    collection do
+      get 'profile'
+    end
+  end
+  resources :flats, except: :destroy do
+    resources :bookings, except: [:destroy, :index]
+  end
+  resources :bookings, only: [:destroy, :index]
     # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
