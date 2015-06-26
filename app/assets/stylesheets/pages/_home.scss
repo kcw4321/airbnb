@@ -69,3 +69,18 @@ body {
   color: white;
 
 }
+
+.vincent{
+  height:400px;
+  position: fixed;
+  overflow: auto;
+  border: 1px solid blue;
+  background-colour:green;
+  margin-right: 12%;
+  }
+
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -142px;
+}

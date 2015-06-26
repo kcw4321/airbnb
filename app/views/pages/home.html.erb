@@ -15,6 +15,7 @@
       <h1>WELCOME HOME</h1>
     </div>
 
+      <div class="container row text-center">
       <div class="form-inline">
         <%= form_tag(flats_path, method: "get", class: "") do %>
             <%= text_field_tag(:city, nil, placeholder: 'Look for a city', class: 'form-control') %>
@@ -23,6 +24,7 @@
           <%= number_field_tag :capacity, nil, placeholder: '2 guests', min: 1, max: 15, class: 'form-control', id: 'guest-btn' %>
           <%= submit_tag("Search", class: "btn-success btn-large btn form-control", id: 'submit-btn') %>
         <% end %>
+        </div>
       </div>
     </div>
   </div>
