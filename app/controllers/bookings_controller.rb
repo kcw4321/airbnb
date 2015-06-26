@@ -10,8 +10,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-      @booking = Booking.new(booking_params)
-      @booking.user = current_user
+      @booking = current_user.bookings.build(booking_params)
     if @booking.save
       redirect_to flat_booking_path(@booking.flat, @booking)
     else

@@ -1,12 +1,54 @@
+<h1> Hello <%= current_user.name %> </h1>
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <div class="card_profile text-center">
-      <div><%= image_tag(current_user.picture.url(:medium)) %></div>
-      <div><%= current_user.name %></div>
+    <div class="col-xs-12">
+      <div class="text-center">
+      <div class='img-circle'><%= image_tag(current_user.picture.url(:medium)) %></div>
       <div><%= current_user.email %></div>
       </div>
-      <div class="text-center"><%= link_to("Edit", edit_user_registration_path(current_user), class: "btn btn-default btn-xs btn-right") %></div>
+      <div class="text-center"><%= link_to("Edit", edit_user_registration_path(current_user), class: "btn btn-default btn-lg") %></div>
     </div>
+  </div>
+</div>
+
+
+
+<h2 class="title-center">My bookings</h2>
+<% @my_bookings.each do |booking| %>
+  <%= booking.flat.title %>
+  <%= booking.flat.description %>
+  <%= image_tag(booking.flat.picture.url(:thumb)) %>
+<% end %>
+
+<% link_to "Add a new flat", new_flat_path %>
+
+
+
+
+
+<h2 class="title-center">Received booking</h2>
+<div class="container">
+    <div class="row">
+      <% current_user.flats.each do |flat| %>
+
+        <% flat.bookings.each do |booking| %>
+          <div class="col-xs-12">
+            <div class=" text-center">
+              <div><%= Flat.find(booking.flat_id).title %></div>
+              <br>
+              <div><%= image_tag flat.picture %></div>
+              <br>
+                <div> <strong>Check in </strong> <%= booking.check_in %> </div>
+                <div> <strong>Check out </strong> <%= booking.check_out %> </div>
+                <div>
+                  <%= simple_form_for [flat, booking] do |f| %>
+                    <%= f.input :accepted, as: :boolean, accepted: true %>
+                    <%= f.button :submit, class: "btn btn-success" %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+        <% end %>
+      <% end %>
   </div>
 </div>
