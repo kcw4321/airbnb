@@ -19,7 +19,7 @@
       <%= simple_form_for @booking, method: :post do |f| %>
         <%= f.input :check_in %>
         <%= f.input :check_out %>
-        <%= f.input :guest, label: 'Number of gue' %>
+        <%= f.input :guest, label: 'Number of guests' %>
         <%= f.input :flat_id, :as => :hidden, :input_html => { :value => @flat.id } %>
 
         <%= f.button :submit, "Send booking request" %>
