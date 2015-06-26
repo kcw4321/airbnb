@@ -18,10 +18,9 @@
       <div class="form-inline">
         <%= form_tag(flats_path, method: "get", class: "") do %>
             <%= text_field_tag(:city, nil, placeholder: 'Look for a city', class: 'form-control') %>
-          <%= date_field(:booking, :check_in, placeholder: 'Checkin', class: 'form-control', id: 'date-btn') %>
-          <%= date_field(:booking, :check_out, placeholder: 'Checkout', class: 'form-control', id: 'date-btn') %>
+          <%= date_field(:booking, :check_in, placeholder: 'Check in', class: 'form-control', id: 'date-btn') %>
+          <%= date_field(:booking, :check_out, placeholder: 'Check out', class: 'form-control', id: 'date-btn') %>
           <%= number_field_tag :capacity, nil, placeholder: '2 guests', min: 1, max: 15, class: 'form-control', id: 'guest-btn' %>
-         <!--  <%= number_field_tag :beds,nil, placeholder: 'How many beds',min: 1, max: 10 %> -->
           <%= submit_tag("Search", class: "btn-success btn-large btn form-control", id: 'submit-btn') %>
         <% end %>
       </div>
