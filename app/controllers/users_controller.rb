@@ -2,10 +2,11 @@ class UsersController < ApplicationController
 
   def profile
     @my_bookings = current_user.bookings
-    @my_rents = current_user.bookings.where()
+    @my_flats = current_user.flats
   end
 
   def edit
+    current_user = User.find(:id)
   end
 
   def update
