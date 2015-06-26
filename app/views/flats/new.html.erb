@@ -10,6 +10,8 @@
           <%= f.input :street %>
           <%= f.input :zipcode %>
           <%= f.input :city %>
+          <%= f.label :picture %>
+          <%= f.file_field :picture %>
           <%= f.button :submit %>
         <% end %>
         <%= link_to 'Cancel', flats_path %>

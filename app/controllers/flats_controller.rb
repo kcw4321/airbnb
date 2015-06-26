@@ -1,6 +1,5 @@
 class FlatsController < ApplicationController
 
-
   def index
     @flats = Flat.all
 
@@ -46,7 +45,7 @@ class FlatsController < ApplicationController
   end
 
   def flat_params
-    params.require(:flat).permit(:title, :description, :price, :street, :zipcode, :city) #:capacity
+    params.require(:flat).permit(:title, :description, :price, :street, :zipcode, :city, :picture, :guest) #:capacity
   end
 
 
