@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to:'pages#home'
   # post '/search' => 'flats#search'
   # post '/results'=> 'flats#resultsrake'
 
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  resources :users, only: [:edit, :update] do
+    collection do
+      get 'profile'
+    end
+  end
   resources :flats, except: :destroy
   resources :bookings, except: :destroy
 
