@@ -14,7 +14,8 @@
           <%= f.file_field :picture %>
           <%= f.button :submit %>
         <% end %>
-        <%= link_to 'Cancel', flats_path %>
+        <i class="fa fa-trash-o"></i><%= link_to 'Cancel', flats_path %>
+        <i class="fa fa-chevron-circle-left"></i><%= link_to "Back", :back %>
       </div>
     </div>
   </div>
